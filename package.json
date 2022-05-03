@@ -12,9 +12,6 @@
     "react-flv-player": "^1.0.9",
     "react-scripts": "5.0.1",
     "react-spring": "^9.4.4",
-    "react-tsparticles": "^2.0.5",
-    "tsparticles": "^2.0.5",
-    "tsparticles-preset-triangles": "^2.0.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
