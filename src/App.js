@@ -4,9 +4,10 @@ function App() {
   return (
     <div className="App" >
       <br/><br/><br/><br/><br/><br/>
+      <input></input>&emsp;
       <button
-            onClick={() => window.open('https://google.ca')}>Join crowd</button>&emsp;
-          <input></input><br/>
+            onClick={() => window.open('https://google.ca')}>Join crowd</button>
+          <br/>
         <ReactFlvPlayer
           url = "http://localhost:8000/live/ok.flv"
           heigh = "800px"
