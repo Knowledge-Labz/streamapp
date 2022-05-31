@@ -1,6 +1,5 @@
 import './App.css';
 import { ReactFlvPlayer } from 'react-flv-player';
-//import background from '../public/4000x4000.gif';
 function App() {
   return (
     <div className="App" >
@@ -11,6 +10,7 @@ function App() {
           width = "800px"
           isMuted={true}
         />
+        <button>Buy ticket</button>
     </div>
   );
 }
