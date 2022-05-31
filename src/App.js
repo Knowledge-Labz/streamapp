@@ -7,7 +7,7 @@ function App() {
       <input></input>&emsp;
       <button
             onClick={() => window.open('https://google.ca')}>Join crowd</button>
-          <br/>
+          <br/><br/>
         <ReactFlvPlayer
           url = "http://localhost:8000/live/ok.flv"
           heigh = "800px"
