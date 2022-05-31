@@ -10,7 +10,8 @@ function App() {
           width = "800px"
           isMuted={true}
         />
-        <button>Buy ticket</button>
+        <button
+          onClick={() => window.open('https://google.ca')}>Buy ticket</button>
     </div>
   );
 }
