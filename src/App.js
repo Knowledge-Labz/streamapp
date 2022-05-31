@@ -3,7 +3,7 @@ import { ReactFlvPlayer } from 'react-flv-player';
 //import background from '../public/4000x4000.gif';
 function App() {
   return (
-    <div className="App" >
+    <div className="App" width="100vw" height="100vh">
       <br/><br/><br/><br/><br/><br/>
         <ReactFlvPlayer
           url = "http://localhost:8000/live/ok.flv"
