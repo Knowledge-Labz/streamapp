@@ -1,20 +1,24 @@
 import './App.css';
 import { ReactFlvPlayer } from 'react-flv-player';
+import { useState } from 'react';
+
 function App() {
+  const [validEntry, setValidEntry] = useState(false);
   return (
     <div className="App" >
       <br/><br/><br/><br/><br/><br/>
       <input></input>&emsp;
-      <button
-            onClick={() => window.open('https://google.ca')}>Join crowd</button>
+      {!validEntry ? <button
+            onClick={() => window.open('https://google.ca')}>
+            Join crowd
+      </button> : <span/>}
           <br/><br/>
-        <ReactFlvPlayer
+        {validEntry ? <ReactFlvPlayer
           url = "http://localhost:8000/live/ok.flv"
           heigh = "800px"
           width = "800px"
-          isMuted={true}
-        />
-        <button
+        /> : <iframe width="560" height="315" src="https://www.youtube.com/embed/xY-l_gDNeK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
+        <br/><button
           onClick={() => window.open('https://google.ca')}>Buy ticket</button>
     </div>
   );
