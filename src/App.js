@@ -19,7 +19,7 @@ function App() {
           width = "800px"
         /> : <iframe width="560" height="315" src="https://www.youtube.com/embed/xY-l_gDNeK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
         <br/><button
-          onClick={() => window.open('https://google.ca')}>Buy ticket</button>
+          onClick={() => window.open('http://localhost:4242/create-checkout-session')}>Buy ticket</button>
     </div>
   );
 }
