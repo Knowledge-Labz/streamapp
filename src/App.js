@@ -1,13 +1,12 @@
 import './App.css';
 import { ReactFlvPlayer } from 'react-flv-player';
 import { useState } from 'react';
-import { useSearchParams } from "react-router-dom";
+import useQueryString from "./useQueryString";
 
 function App() {
-  const [searchParams, setSearchParams] = useSearchParams();
   const [validEntry, setValidEntry] = useState(false);
-  const ticketId = searchParams.get('ticketId') ? searchParams.get('ticketId') : '';
-  const denied = searchParams.get('denied') ? true : false;
+  const ticketId = useQueryString('ticketId') ? useQueryString('ticketId') : '';
+  const denied = useQueryString('denied') ? true : false;
   return (
     <div className="App" >
       <br/><br/><br/><br/><br/><br/>
