@@ -7,6 +7,8 @@ function App() {
   const [validEntry, setValidEntry] = useState(false);
   const ticketId = useQueryString('ticketId');
   const denied = useQueryString('denied');
+  console.log(ticketId);
+  console.log(denied);
   return (
     <div className="App" >
       <br/><br/><br/><br/><br/><br/>
