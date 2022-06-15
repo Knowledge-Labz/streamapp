@@ -26,8 +26,8 @@ function App() {
         <br/><button
           onClick={() => window.open('http://localhost:4242/create-checkout-session')}>Buy ticket</button>
         <br/><br/>
-        {ticketId != '' ? (<p>Your ticket number is <b>{ticketId}</b>, please keep it safe until the show!</p>) : <span/>}
-        {denied ? (<p>Yor purchase could not be completed.</p>) : <span/>}
+        {ticketId[0] != undefined ? (<p>Your ticket number is <b>{ticketId[0]}</b>, please keep it safe until the show!</p>) : <span/>}
+        {denied[0] != undefined ? (<p>Yor purchase could not be completed.</p>) : <span/>}
     </div>
   );
 }
