@@ -6,7 +6,8 @@ import { useSearchParams } from "react-router-dom";
 function App() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [validEntry, setValidEntry] = useState(false);
-  const [ticketId, setTicketId] = searchParams.get('ticketId') ? useState(searchParams.get('ticketId')) : useState('');
+  const ticketId = searchParams.get('ticketId') ? searchParams.get('ticketId') : '';
+  const denied = searchParams.get('denied') ? true : false;
   return (
     <div className="App" >
       <br/><br/><br/><br/><br/><br/>
@@ -25,6 +26,7 @@ function App() {
           onClick={() => window.open('http://localhost:4242/create-checkout-session')}>Buy ticket</button>
         <br/><br/>
         {ticketId != '' ? (<p>Your ticket number is <b>{ticketId}</b>, please keep it safe until the show!</p>) : <span/>}
+        {denied ? (<p>Yor purchase could not be completed.</p>) : <span/>}
     </div>
   );
 }
