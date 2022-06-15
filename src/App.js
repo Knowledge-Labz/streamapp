@@ -5,8 +5,8 @@ import useQueryString from "./useQueryString";
 
 function App() {
   const [validEntry, setValidEntry] = useState(false);
-  const ticketId = useQueryString('ticketId') ? useQueryString('ticketId') : '';
-  const denied = useQueryString('denied') ? true : false;
+  const ticketId = useQueryString('ticketId');
+  const denied = useQueryString('denied');
   return (
     <div className="App" >
       <br/><br/><br/><br/><br/><br/>
