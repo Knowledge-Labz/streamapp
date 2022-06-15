@@ -1,7 +1,7 @@
 import './App.css';
 import { ReactFlvPlayer } from 'react-flv-player';
 import { useState } from 'react';
-import useQueryString from "./queryString";
+import useQueryString from "./useQueryString";
 
 function App() {
   const [validEntry, setValidEntry] = useState(false);
