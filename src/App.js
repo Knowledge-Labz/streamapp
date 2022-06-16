@@ -22,7 +22,7 @@ function App() {
           url = "http://localhost:8000/live/ok.flv"
           heigh = "800px"
           width = "800px"
-        /> : <iframe width="560" height="315" src="https://www.youtube.com/embed/xY-l_gDNeK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
+        /> : <iframe width="560" height="315" src="https://www.youtube.com/embed/VWkjW6IGKb0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
         <br/><button
           onClick={() => window.open('http://localhost:4242/create-checkout-session')}>Buy ticket</button>
         <br/><br/>
