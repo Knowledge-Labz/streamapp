@@ -5,14 +5,20 @@ import useQueryString from "./useQueryString";
 
 function App() {
   const [validEntry, setValidEntry] = useState(false);
+  const [enteredTicket, setEnteredTicket] = useState("");
   const ticketId = useQueryString('ticketId');
   const denied = useQueryString('denied');
   console.log(ticketId);
   console.log(denied);
+
+  const checkTicketValidity = async(candidate) => {
+    let res = await fetch('http://localhost:4242/is-valid?ticketId=' + candidate);
+    let data = await res.json();
+    console.log(data);
   return (
     <div className="App" >
       <br/><br/><br/><br/><br/><br/>
-      <input></input>&emsp;
+      <input value={enteredTicket} onChange={(e) => setEnteredTicket(e.target.value)}></input>&emsp;
       {!validEntry ? <button
             onClick={() => window.open('https://google.ca')}>
             Join crowd
