@@ -19,7 +19,11 @@ function App() {
       } else {
         return setValidEntry(false);
       }
-    });
+    }).catch((error) => {
+      console.log(error);
+      return setValidEntry(false);
+    }
+    );
   }
   return (
     <div className="App" >
