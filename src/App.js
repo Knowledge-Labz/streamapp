@@ -11,11 +11,15 @@ function App() {
   console.log(ticketId);
   console.log(denied);
 
-  const checkTicketValidity = async(candidate) => {
-    let res = await fetch('http://localhost:4242/is-valid?ticketId=' + candidate);
-    let data = await res.json();
-    console.log(data);
-    setValidEntry(data);
+  const checkTicketValidity = (candidate) => {
+    fetch('http://localhost:4242/is-valid?ticketId=' + candidate).then((response) => {
+      // check if status code is 200
+      if (response.status === 200) {
+        return setValidEntry(true);
+      } else {
+        return setValidEntry(false);
+      }
+    });
   }
   return (
     <div className="App" >
