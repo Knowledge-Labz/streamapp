@@ -15,6 +15,8 @@ function App() {
     let res = await fetch('http://localhost:4242/is-valid?ticketId=' + candidate);
     let data = await res.json();
     console.log(data);
+    setValidEntry(data);
+  }
   return (
     <div className="App" >
       <br/><br/><br/><br/><br/><br/>
