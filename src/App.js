@@ -22,7 +22,7 @@ function App() {
       <br/><br/><br/><br/><br/><br/>
       <input value={enteredTicket} onChange={(e) => setEnteredTicket(e.target.value)}></input>&emsp;
       {!validEntry ? <button
-            onClick={() => window.open('https://google.ca')}>
+            onClick={() => checkTicketValidity(enteredTicket)}>
             Join crowd
       </button> : <span/>}
           <br/><br/>
