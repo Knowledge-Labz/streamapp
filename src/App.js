@@ -12,7 +12,7 @@ function App() {
   console.log(denied);
 
   const checkTicketValidity = (candidate) => {
-    fetch('http://localhost:4242/is-valid?ticketId=' + candidate).then((response) => {
+    fetch(process.env.REACT_APP_BACKEND + 'is-valid?ticketId=' + candidate).then((response) => {
       // check if status code is 200
       if (response.status === 200) {
         return setValidEntry(true);
@@ -35,16 +35,16 @@ function App() {
       </button> : <span/>}
           <br/><br/>
         {validEntry ? <ReactFlvPlayer
-          url = "http://localhost:8000/live/ok.flv"
+          url = {process.env.REACT_APP_STREAM_ENDPOINT}
           heigh = "800px"
           width = "800px"
-        /> : <iframe width="560" height="315" src="https://www.youtube.com/embed/VWkjW6IGKb0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
+        /> : <iframe width="560" height="315" src={process.env.REACT_APP_IFRAME_PLACEHOLDER} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}
         <br/><button
-          onClick={() => window.open('http://localhost:4242/create-checkout-session')}>Buy ticket</button>
+          onClick={() => window.open(process.env.REACT_APP_BACKEND + 'create-checkout-session')}>Buy ticket</button>
         <br/><br/>
         <div className='message'>
-        {ticketId[0] != undefined ? (<p>Your ticket number is <b>{ticketId[0]}</b>, please keep it safe until the show!</p>) : <span/>}
-        {denied[0] != undefined ? (<p>Yor purchase could not be completed.</p>) : <span/>}
+        {ticketId[0] !== undefined ? (<p>Your ticket number is <b>{ticketId[0]}</b>, please keep it safe until the show!</p>) : <span/>}
+        {denied[0] !== undefined ? (<p>Yor purchase could not be completed.</p>) : <span/>}
         </div>
     </div>
   );
